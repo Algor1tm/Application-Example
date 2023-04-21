@@ -13,6 +13,7 @@ source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}" FILES ${SRC_FILES} )
 
 EnableMultiProcessorCompilation(Application-Example)
 set_property(TARGET Application-Example PROPERTY CXX_STANDARD 20)
+set_property(TARGET Application-Example PROPERTY VS_DEBUGGER_WORKING_DIRECTORY  "${CMAKE_SOURCE_DIR}/Application-Example")
 set_property(TARGET Application-Example PROPERTY DEBUG_POSTFIX "")
 
 # Build folder
