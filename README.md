@@ -1,5 +1,5 @@
-# Athena
-Application-Core is light-weight library, that uses 
+# Application-Template
+Application-Template is light-weight library, that uses 
 OpenGL(glad) for graphics, GLFW for window creation and 
 input handling, ImGui for UI, stb_image for texture 
 loading and own math library. Currently supports
