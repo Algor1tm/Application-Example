@@ -1,5 +1,8 @@
 cmake_minimum_required (VERSION 3.16)
 
+set(APPLICATION_NAME "Application-Example")
+
+
 set(BUILD_FOLDER "${CMAKE_SOURCE_DIR}/Build/Binaries")
 
 set(THIRD_PARTY_DIR "${CMAKE_SOURCE_DIR}/ThirdParty")
@@ -19,10 +22,10 @@ macro(EnableMultiProcessorCompilation TARGET_NAME)
 endmacro()
 
 
-project ("Application-Example")
+project (${APPLICATION_NAME})
 
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT "Application-Example")
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT ${APPLICATION_NAME})
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "" FORCE)
 
@@ -32,4 +35,4 @@ add_subdirectory("${THIRD_PARTY_DIR}/GLFW")
 add_subdirectory("${THIRD_PARTY_DIR}/ImGui")
 
 add_subdirectory("Core")
-add_subdirectory("Application-Example")
+add_subdirectory(${APPLICATION_NAME})
